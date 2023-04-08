@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import Bag from './Bag'
 // import ReactPaginate from 'react-paginate'
 import CryptoTable from './CryptoTable'
 import Header from './Header'
+
 
 const App: React.FC = () => {
   return (
@@ -9,6 +11,7 @@ const App: React.FC = () => {
     <div>
       <Header/>
       <CryptoTable />
+      <Bag/>
     </div>
   )
 }

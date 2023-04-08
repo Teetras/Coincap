@@ -25,9 +25,6 @@ const Header: React.FC=()=>{
           {topCrypto.map((crypto: any) => (
 
             <p key={crypto.id}>
-                {/* <p></p>
-                <p></p>
-                <p></p> */}
               {crypto.name}: ${crypto.price}
             </p>
           ))}

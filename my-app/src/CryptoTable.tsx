@@ -47,7 +47,7 @@ const CryptoTable: React.FC=()=>{
   const handleModalClose = () => {
       setIsModalOpen(false);
   }
-  const handleModalSubmit = (value: number, name: string) => {
+  const handleModalSubmit = (value: number, name: string,price:number) => {
     console.log(`Adding ${value} ${name} to portfolio`);
     setIsModalOpen(false);
   };
@@ -93,7 +93,8 @@ const CryptoTable: React.FC=()=>{
       <Modal
       onClose={handleModalClose}
       onSubmit={handleModalSubmit}
-          cryptoName={selectedCrypto.name} // передаем значение cryptoName
+          name={selectedCrypto.name} // передаем значение name crypto
+          price={selectedCrypto.price}
     />
       )}
 
