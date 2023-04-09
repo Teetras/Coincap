@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ReactPaginate from 'react-paginate'
-import styles from  "./CryptoTable.module.scss"
+import styles from  "./style/CryptoTable.module.scss"
 import Modal from './Modal'
 
 
@@ -48,7 +48,8 @@ const CryptoTable: React.FC=()=>{
       setIsModalOpen(false);
   }
   const handleModalSubmit = (value: number, name: string,price:number) => {
-    console.log(`Adding ${value} ${name} to portfolio`);
+    console.log(`Adding ${value} ${name} to portfolio ${price}`);
+    
     setIsModalOpen(false);
   };
 
@@ -95,6 +96,7 @@ const CryptoTable: React.FC=()=>{
       onSubmit={handleModalSubmit}
           name={selectedCrypto.name} // передаем значение name crypto
           price={selectedCrypto.price}
+          
     />
       )}
 

@@ -11,7 +11,7 @@ const App: React.FC = () => {
     <div>
       <Header/>
       <CryptoTable />
-      <Bag/>
+   
     </div>
   )
 }

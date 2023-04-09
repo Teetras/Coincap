@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import styles from "./Header.module.scss"
+import styles from "./style/Header.module.scss"
+import Spread from './Spread';
+import BagInfo from './Bag';
 
 const Header: React.FC=()=>{
     const [topCrypto, setTopCrypto] = useState([]);
@@ -19,7 +21,7 @@ const Header: React.FC=()=>{
         fetchCryptos();
       }, [])
     
-      return (
+      return ( <div className="">
         <div className={styles.topCrypto} >
            <p> Top Crypta</p>
           {topCrypto.map((crypto: any) => (
@@ -27,8 +29,11 @@ const Header: React.FC=()=>{
             <p key={crypto.id}>
               {crypto.name}: ${crypto.price}
             </p>
-          ))}
+          ))} 
+          <Spread/>
+          <BagInfo/>
         </div>
+       </div>
       );
 };
 export default Header
