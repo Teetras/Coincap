@@ -6,6 +6,8 @@ import BagInfo from './Bag';
 
 const Header: React.FC=()=>{
     const [topCrypto, setTopCrypto] = useState([]);
+    const [isBagInfoOpen, setIsBagInfoOpen] = useState(false);
+
     useEffect(() => {
         const fetchCryptos = async () => {
           const response = await axios.get(
@@ -20,6 +22,12 @@ const Header: React.FC=()=>{
         };
         fetchCryptos();
       }, [])
+      const handleBagInfoOpen = () => {
+        setIsBagInfoOpen(true);
+      };
+      const handleCloseBag = () => {
+        setIsBagInfoOpen(false);
+      };
     
       return ( <div className="">
         <div className={styles.topCrypto} >
@@ -30,8 +38,10 @@ const Header: React.FC=()=>{
               {crypto.name}: ${crypto.price}
             </p>
           ))} 
-          <Spread/>
-          <BagInfo/>
+        
+  <Spread/>
+          <button onClick={handleBagInfoOpen}>Open Bag Info</button>
+          {isBagInfoOpen && <BagInfo handleCloseBag={handleCloseBag} />}
         </div>
        </div>
       );

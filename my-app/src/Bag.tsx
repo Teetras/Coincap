@@ -6,8 +6,10 @@ name: string;
 price: number;
 quantity: number;
 }
-
-const BagInfo: React.FC = () => {
+interface BagInfoProps {
+    handleCloseBag: () => void;
+  }
+const BagInfo: React.FC<BagInfoProps> = ({handleCloseBag}) => {
 const [currencies, setCurrencies] = useState<Currency[]>([]);
 
 useEffect(() => {
@@ -53,7 +55,7 @@ return (
 ))}
 </tbody>
 </table>
-<button className="close-button">Close</button>
+<button className="close-button"  onClick={handleCloseBag}>Close</button>
 </div>
 </div>
 );

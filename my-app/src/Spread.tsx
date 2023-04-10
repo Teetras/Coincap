@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React,{useState} from 'react';
 interface Currency {
   name: string;
   price: number;
@@ -13,6 +12,7 @@ interface SpreadState {
 }
 
 class Spread extends React.Component<{}, SpreadState> {
+
   constructor(props: {}) {
     super(props);
     this.state = {
@@ -68,10 +68,15 @@ console.log(currencies)
       this.setState({ currentValue });
     }
   }
-
+//  const handleOpenBag(){
+//     console.log("button")
+//     // return(<div>
+//     //   <BagInfo/>
+//     // </div>)
+//   }
   render() {
     const { initialValue, currentValue } = this.state;
-    const difference = initialValue - currentValue;
+    const difference = currentValue - initialValue;
     const differencePercent = ((difference / initialValue) * 100).toFixed(2);
 
     return (
@@ -82,6 +87,9 @@ console.log(currencies)
           <span className={`difference ${difference >= 0 ? 'positive' : 'negative'}`}>
             {currentValue.toFixed(2)} USD ({differencePercent}%)
           </span>
+          {/* <button onClick={() => handleOpenBag()}>+</button> */}
+
+
         </div>
       </div>
     );
