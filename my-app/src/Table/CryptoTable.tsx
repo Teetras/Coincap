@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ReactPaginate from 'react-paginate'
-import styles from  "./style/CryptoTable.module.scss"
-import Modal from './Modal'
+import styles from  "./CryptoTable.module.scss"
+import Modal from '../Modal elements/Modal'
 
 
 type Crypto={
@@ -60,9 +60,9 @@ const CryptoTable: React.FC=()=>{
         <tr key={crypto.id}  >
           <td>{crypto.name}</td>
           <td>{crypto.symbol}</td>
-          <td>{crypto.price}</td>
+          <td>{crypto.price.toFixed(5)}</td>
           <td>
-            <button onClick={() => handleAddToPortfolio(crypto)}>+</button>
+            <button className={styles.btn} onClick={() => handleAddToPortfolio(crypto)}>+</button>
           </td>
         </tr>
       ));
@@ -70,7 +70,7 @@ const CryptoTable: React.FC=()=>{
     const pageCount = Math.ceil(cryptos.length / PER_PAGE)
   
     return (
-      <div>
+      <div className={styles.content}>
         <table className={styles.cryptoTable} >
           <thead>
             <tr >

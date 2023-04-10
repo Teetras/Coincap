@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import Bag from './Bag'
-// import ReactPaginate from 'react-paginate'
-import CryptoTable from './CryptoTable'
-import Header from './Header'
+import CryptoTable from './Table/CryptoTable'
+import Header from './Header/Header'
+import './App.module.scss'
 
 
 const App: React.FC = () => {
   return (
-   
+   <body>
     <div>
       <Header/>
       <CryptoTable />
    
-    </div>
+    </div></body>
   )
 }
 

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import styles from './style/Modal.module.scss';
+import styles from './Modal.module.scss';
 
 type ModalProps = {
   onClose: () => void;
   onSubmit: (value: number, name: string, price: number) => void;
   name: string;
   price: number;
+  
 }
 
 interface Item {

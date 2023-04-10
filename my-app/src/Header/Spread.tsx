@@ -80,6 +80,7 @@ console.log(currencies)
     const differencePercent = ((difference / initialValue) * 100).toFixed(2);
 
     return (
+      <div className="modalOverlay">
       <div className="header">
         <h3>You're Crypto</h3>
         <div className="portfolio">
@@ -91,7 +92,7 @@ console.log(currencies)
 
 
         </div>
-      </div>
+        </div>  </div>
     );
   }
 }

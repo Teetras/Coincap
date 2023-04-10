@@ -1,0 +1,76 @@
+.content{
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+flex-direction: column;
+
+}
+.cryptoTable {
+    border-collapse: collapse;
+    width: 90%;
+    background-color: #747171ce;
+
+  }
+  
+  .cryptoTable td,
+  .cryptoTable th {
+    border: 1px solid rgba(221, 221, 221, 0.555);
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+ 
+  
+  .cryptoTable th {
+    background-color: #f2f2f29b;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    
+
+  }
+  
+  .pagination li {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;background-color: #f2f2f24d;
+  }
+  
+  .pagination li.active {
+    background-color:rgba(61, 105, 111, 0.826);
+    color: white;
+  }
+  
+  .pagination li.disabled {
+    color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .pagination li:hover:not(.active) {
+    background-color: rgba(138, 164, 167, 0.786);
+  }
+  .btn {
+    background-color: #053d0796;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 9px;
+  }
+  
+  .btn:hover {
+    background-color: #3e8e41;
+  }

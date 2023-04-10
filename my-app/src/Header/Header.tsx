@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import styles from "./style/Header.module.scss"
+import styles from "./Header.module.scss"
 import Spread from './Spread';
-import BagInfo from './Bag';
+import BagInfo from '../Modal elements/Bag';
 
 const Header: React.FC=()=>{
     const [topCrypto, setTopCrypto] = useState([]);
@@ -29,20 +29,21 @@ const Header: React.FC=()=>{
         setIsBagInfoOpen(false);
       };
     
-      return ( <div className="">
+      return ( 
+      <div className={styles.head}>
         <div className={styles.topCrypto} >
            <p> Top Crypta</p>
           {topCrypto.map((crypto: any) => (
 
             <p key={crypto.id}>
-              {crypto.name}: ${crypto.price}
+              {crypto.name}: ${crypto.price.toFixed(2)}
             </p>
           ))} 
-        
-  <Spread/>
-          <button onClick={handleBagInfoOpen}>Open Bag Info</button>
-          {isBagInfoOpen && <BagInfo handleCloseBag={handleCloseBag} />}
         </div>
+  <Spread/>
+          <button className={styles.btnOpenBag} onClick={handleBagInfoOpen}>Open Bag Info</button>
+         
+         {isBagInfoOpen && <BagInfo handleCloseBag={handleCloseBag} />}
        </div>
       );
 };
