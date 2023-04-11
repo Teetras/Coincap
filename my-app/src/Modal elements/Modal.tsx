@@ -36,7 +36,6 @@ const Modal: React.FC<ModalProps> = ({ onClose, onSubmit, name, price }) => {
     onClose();
   }
   const handleAddItem = () => {
-    // const { name, price, value } = props;
     const existingItemIndex = bagItems.findIndex((item) => item.name === name);
 
     if (existingItemIndex !== -1) {

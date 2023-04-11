@@ -1,33 +1,32 @@
-*{
-    margin: 0;
+* {
+  margin: 0;
 }
-.head{
-    display: flex;
-    background-color: #f2f2f29c;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
+.head {
+  display: flex;
+  background-color: #f2f2f29c;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
 }
-.topCrypto{
-    display: flex;
-    flex-direction: row;
-    // background-color: #f2f2f261;
-width: 40%;
-
+.topCrypto {
+  display: flex;
+  flex-direction: row;
+  // background-color: #f2f2f261;
+  width: 40%;
 }
-.topCrypto p{
-    margin:10px 1%;
+.topCrypto p {
+  margin: 10px 1%;
 }
-.btnOpenBag{
-    background-color: #053d07d2;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
+.btnOpenBag {
+  background-color: #053d07d2;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
 }

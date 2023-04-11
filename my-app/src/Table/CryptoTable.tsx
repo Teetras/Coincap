@@ -36,40 +36,39 @@ const CryptoTable: React.FC=()=>{
         fetchCryptos();
       }, [])
   
-      const handlePageClick = (data: any) => {
-        setCurrentPage(data.selected);
-    }
-    const handleAddToPortfolio = (crypto: Crypto) => {
-      setSelectedCrypto(crypto);
-      setIsModalOpen(true);
-    }
+const handlePageClick = (data: any) => {
+  setCurrentPage(data.selected);
+}
+const handleAddToPortfolio = (crypto: Crypto) => {
+  setSelectedCrypto(crypto);
+  setIsModalOpen(true);
+}
   
-  const handleModalClose = () => {
-      setIsModalOpen(false);
-  }
-  const handleModalSubmit = (value: number, name: string,price:number) => {
-    console.log(`Adding ${value} ${name} to portfolio ${price}`);
-    
-    setIsModalOpen(false);
-  };
+const handleModalClose = () => {
+  setIsModalOpen(false);
+}
+const handleModalSubmit = (value: number, name: string,price:number) => {
+  console.log(`Adding ${value} ${name} to portfolio ${price}`); 
+  setIsModalOpen(false);
+};
 
 
-      const displayCryptos = cryptos
-      .slice(offset, offset + PER_PAGE)
-      .map((crypto) => (
-        <tr key={crypto.id}  >
-          <td>{crypto.name}</td>
-          <td>{crypto.symbol}</td>
-          <td>{crypto.price.toFixed(5)}</td>
-          <td>
-            <button className={styles.btn} onClick={() => handleAddToPortfolio(crypto)}>+</button>
-          </td>
-        </tr>
-      ));
+const displayCryptos = cryptos
+ .slice(offset, offset + PER_PAGE)
+ .map((crypto) => (
+    <tr key={crypto.id}  >
+      <td>{crypto.name}</td>
+      <td>{crypto.symbol}</td>
+      <td>{crypto.price.toFixed(5)}</td>
+      <td>
+       <button className={styles.btn} onClick={() => handleAddToPortfolio(crypto)}>+</button>
+      </td>
+    </tr>
+  ));
     
-    const pageCount = Math.ceil(cryptos.length / PER_PAGE)
+const pageCount = Math.ceil(cryptos.length / PER_PAGE)
   
-    return (
+  return (
       <div className={styles.content}>
         <table className={styles.cryptoTable} >
           <thead>
@@ -90,17 +89,16 @@ const CryptoTable: React.FC=()=>{
           containerClassName={styles.pagination}
           activeClassName={styles.active}
         />
-      {selectedCrypto && isModalOpen && (
-      <Modal
-      onClose={handleModalClose}
-      onSubmit={handleModalSubmit}
-          name={selectedCrypto.name} // передаем значение name crypto
-          price={selectedCrypto.price}
-          
-    />
-      )}
+        {selectedCrypto && isModalOpen && (
+          <Modal
+            onClose={handleModalClose}
+            onSubmit={handleModalSubmit}
+            name={selectedCrypto.name} 
+            price={selectedCrypto.price} 
+          />
+         )}
 
       </div>
-    );
+  );
 }
 export default CryptoTable;

@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 interface Currency {
   name: string;
   price: number;
@@ -27,7 +27,6 @@ class Spread extends React.Component<{}, SpreadState> {
     if (storedCurrencies) {
       const parsedCurrencies = JSON.parse(storedCurrencies);
       this.setState({ currencies: parsedCurrencies });
-// 
       const initialValue = parsedCurrencies.reduce(
         (total: number, currency: Currency) => total + currency.price * currency.quantity,
         0,
@@ -41,10 +40,10 @@ class Spread extends React.Component<{}, SpreadState> {
     const response = await fetch('https://api.coincap.io/v2/assets?limit=100');
     const data = await response.json();
     const { currencies } = this.state;
-console.log(currencies)
+    console.log(currencies)
     const updatedCurrencies = currencies.map((item, index) => {
       const foundCurrency = data.data.find((currency: Currency) => currency.name === item.name);
-// console.log(currency )
+
       if (foundCurrency) {
         return {
           ...item,
@@ -52,8 +51,6 @@ console.log(currencies)
         };
       }
       return item;
-// 
-
     });
     this.setState({ currencies: updatedCurrencies });
   }
@@ -68,31 +65,24 @@ console.log(currencies)
       this.setState({ currentValue });
     }
   }
-//  const handleOpenBag(){
-//     console.log("button")
-//     // return(<div>
-//     //   <BagInfo/>
-//     // </div>)
-//   }
+
   render() {
     const { initialValue, currentValue } = this.state;
     const difference = currentValue - initialValue;
     const differencePercent = ((difference / initialValue) * 100).toFixed(2);
 
     return (
-      <div className="modalOverlay">
-      <div className="header">
-        <h3>You're Crypto</h3>
-        <div className="portfolio">
-          <span className="value">{initialValue.toFixed(2)} USD </span>
-          <span className={`difference ${difference >= 0 ? 'positive' : 'negative'}`}>
+     <div className="modalOverlay">
+       <div className="header">
+          <h3>You're Crypto</h3>
+          <div className="portfolio">
+            <span className="value">{initialValue.toFixed(2)} USD </span>
+            <span className={`difference ${difference >= 0 ? 'positive' : 'negative'}`}>
             {currentValue.toFixed(2)} USD ({differencePercent}%)
           </span>
-          {/* <button onClick={() => handleOpenBag()}>+</button> */}
-
-
+         </div>
         </div>
-        </div>  </div>
+      </div>
     );
   }
 }
