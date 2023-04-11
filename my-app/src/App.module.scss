@@ -1,3 +1,11 @@
-body{
-    background-image: url(https://ip-calculator.ru/blog/wp-content/uploads/2022/01/STOCK_IMG_shutterstock_665225914_2019-01-09_2_1_2048px.jpg);
+body {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(33, 27, 27, 1) 80%,
+    rgb(62, 29, 29) 100%
+  );
+  background-repeat: no-repeat;
+  height: 100vh;
 }

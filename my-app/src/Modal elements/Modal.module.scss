@@ -1,112 +1,111 @@
 .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.781);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: rgba(33, 30, 30, 0.657);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 400px;
+
+  h2 {
+    margin-top: 0;
   }
-  
-  .modal {
-    background-color: white;
-    padding: 20px;
+  .close_button {
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: rgb(97, 96, 96);
+    cursor: pointer;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  th {
+    background-color: #181212;
+    padding: 2%;
+  }
+
+  tbody tr:hover {
+    background-color: #f0ff6b61;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #7a41414f;
+    padding: 2%;
+  }
+  .btn {
+    background-color: #d1c5a061;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 400px;
-  
-    h2 {
-      margin-top: 0;
-    }
-    .close_button {
-        top: 10px;
-        right: 10px;
-        padding: 5px 10px;
-        background-color: transparent;
-        border: none;
-        font-size: 24px;
-        color: rgb(97, 96, 96);
-        cursor: pointer;
+    cursor: pointer;
+    margin-right: 6px;
+  }
 
-      }
-      
-    .table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    
-    }
-    th {
-      background-color: #f2f2f2; padding: 2%;
-    }
+  .btn:hover {
+    background-color: #8e7e3e;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
 
-    tbody tr:hover {
-      background-color: #f9f9f9;
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: #f2f2f29b;padding: 2%;
-    }
-    .btn {
-      background-color: #d1c5a0;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
+    input[type="number"] {
+      margin-bottom: 10px;
+      padding: 5px;
       font-size: 16px;
       border-radius: 5px;
-      cursor: pointer;
-      margin-right: 10px;
+      border: none;
+      background-color: #f1f1f142;
+      outline: none;
     }
 
-    .btn:hover {
-      background-color: #8e7e3e;
-    }
-    form {
+    .buttons {
       display: flex;
-      flex-direction: column;
-  
-      input[type="number"] {
-        margin-bottom: 10px;
-        padding: 5px;
+      justify-content: space-between;
+
+      button {
+        padding: 10px;
         font-size: 16px;
         border-radius: 5px;
         border: none;
-        background-color: #f1f1f1;
+        cursor: pointer;
         outline: none;
-      }
-  
-      .buttons {
-        display: flex;
-        justify-content: space-between;
-  
-        button {
-          padding: 10px;
-          font-size: 16px;
-          border-radius: 5px;
-          border: none;
-          cursor: pointer;
-          outline: none;
-  
-          &:hover {
-            opacity: 0.8;
-          }
-  
-          &:first-child {
-            background-color: rgba(104, 126, 104, 0.754);
-            color: white;
-          }
-  
-          &:last-child {
-            background-color: rgba(176, 147, 147, 0.749);
-            color: white;
-          }
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &:first-child {
+          background-color: rgba(104, 126, 104, 0.754);
+          color: white;
+        }
+
+        &:last-child {
+          background-color: rgba(176, 147, 147, 0.749);
+          color: white;
         }
       }
     }
   }
-  
+}

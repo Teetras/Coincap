@@ -35,13 +35,13 @@ const Header: React.FC=()=>{
            <p> Top Crypta</p>
           {topCrypto.map((crypto: any) => (
 
-            <p key={crypto.id}>
+            <p className={styles.listCript} key={crypto.id}>
               {crypto.name}: ${crypto.price.toFixed(2)}
             </p>
           ))} 
         </div>
   <Spread/>
-          <button className={styles.btnOpenBag} onClick={handleBagInfoOpen}>Open Bag Info</button>
+          <button className={styles.btnOpenBag} onClick={handleBagInfoOpen}>Open Bag</button>
          
          {isBagInfoOpen && <BagInfo handleCloseBag={handleCloseBag} />}
        </div>

@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import styles from './Modal.module.scss';
+import React, { useState, useEffect } from "react";
+import styles from "./Modal.module.scss";
 
 type ModalProps = {
   onClose: () => void;
   onSubmit: (value: number, name: string, price: number) => void;
   name: string;
   price: number;
-  
-}
+};
 
 interface Item {
   name: string;
@@ -20,28 +19,28 @@ const Modal: React.FC<ModalProps> = ({ onClose, onSubmit, name, price }) => {
   const [bagItems, setBagItems] = useState<Item[]>([]);
 
   useEffect(() => {
-    const storedBagItems = localStorage.getItem('bagItems');
+    const storedBagItems = localStorage.getItem("bagItems");
     if (storedBagItems) {
       setBagItems(JSON.parse(storedBagItems));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('bagItems', JSON.stringify(bagItems));
+    localStorage.setItem("bagItems", JSON.stringify(bagItems));
   }, [bagItems]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     onSubmit(value, name, price);
     onClose();
-  }
+  };
   const handleAddItem = () => {
     const existingItemIndex = bagItems.findIndex((item) => item.name === name);
 
     if (existingItemIndex !== -1) {
       const existingItem = bagItems[existingItemIndex];
       existingItem.quantity += value;
-      console.log(value)
+      console.log(value);
       const updatedItems = [...bagItems];
       updatedItems[existingItemIndex] = existingItem;
       setBagItems(updatedItems);
@@ -49,7 +48,6 @@ const Modal: React.FC<ModalProps> = ({ onClose, onSubmit, name, price }) => {
       const newItem = { name, price, quantity: value };
       setBagItems([...bagItems, newItem]);
     }
-
   };
 
   return (
@@ -65,7 +63,9 @@ const Modal: React.FC<ModalProps> = ({ onClose, onSubmit, name, price }) => {
             required
           />
           <div className={styles.buttons}>
-            <button type="submit" onClick={handleAddItem}>Add</button>
+            <button type="submit" onClick={handleAddItem}>
+              Add
+            </button>
             <button type="button" onClick={onClose}>
               Cancel
             </button>
@@ -73,7 +73,7 @@ const Modal: React.FC<ModalProps> = ({ onClose, onSubmit, name, price }) => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Modal;

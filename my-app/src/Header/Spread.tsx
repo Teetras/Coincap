@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 interface Currency {
   name: string;
   price: number;
@@ -12,7 +12,6 @@ interface SpreadState {
 }
 
 class Spread extends React.Component<{}, SpreadState> {
-
   constructor(props: {}) {
     super(props);
     this.state = {
@@ -23,13 +22,14 @@ class Spread extends React.Component<{}, SpreadState> {
   }
 
   componentDidMount() {
-    const storedCurrencies = localStorage.getItem('bagItems');
+    const storedCurrencies = localStorage.getItem("bagItems");
     if (storedCurrencies) {
       const parsedCurrencies = JSON.parse(storedCurrencies);
       this.setState({ currencies: parsedCurrencies });
       const initialValue = parsedCurrencies.reduce(
-        (total: number, currency: Currency) => total + currency.price * currency.quantity,
-        0,
+        (total: number, currency: Currency) =>
+          total + currency.price * currency.quantity,
+        0
       );
       this.setState({ initialValue });
       this.fetchCurrencies();
@@ -37,12 +37,14 @@ class Spread extends React.Component<{}, SpreadState> {
   }
 
   async fetchCurrencies() {
-    const response = await fetch('https://api.coincap.io/v2/assets?limit=100');
+    const response = await fetch("https://api.coincap.io/v2/assets?limit=100");
     const data = await response.json();
     const { currencies } = this.state;
-    console.log(currencies)
+    console.log(currencies);
     const updatedCurrencies = currencies.map((item, index) => {
-      const foundCurrency = data.data.find((currency: Currency) => currency.name === item.name);
+      const foundCurrency = data.data.find(
+        (currency: Currency) => currency.name === item.name
+      );
 
       if (foundCurrency) {
         return {
@@ -59,8 +61,9 @@ class Spread extends React.Component<{}, SpreadState> {
     const { currencies } = this.state;
     if (currencies !== prevState.currencies) {
       const currentValue = currencies.reduce(
-        (total: number, currency: Currency) => total + currency.price * currency.quantity,
-        0,
+        (total: number, currency: Currency) =>
+          total + currency.price * currency.quantity,
+        0
       );
       this.setState({ currentValue });
     }
@@ -72,15 +75,17 @@ class Spread extends React.Component<{}, SpreadState> {
     const differencePercent = ((difference / initialValue) * 100).toFixed(2);
 
     return (
-     <div className="modalOverlay">
-       <div className="header">
-          <h3>You're Crypto</h3>
-          <div className="portfolio">
-            <span className="value">{initialValue.toFixed(2)} USD </span>
-            <span className={`difference ${difference >= 0 ? 'positive' : 'negative'}`}>
+      <div className="header">
+        <p>Crypto in You`re Bag</p>
+        <div className="portfolio">
+          <span className="value">{initialValue.toFixed(2)} USD </span>
+          <span
+            className={`difference ${
+              difference >= 0 ? "positive" : "negative"
+            }`}
+          >
             {currentValue.toFixed(2)} USD ({differencePercent}%)
           </span>
-         </div>
         </div>
       </div>
     );
