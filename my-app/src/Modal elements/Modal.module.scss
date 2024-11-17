@@ -12,21 +12,22 @@
 
 .modal {
   background-color: rgba(33, 30, 30, 0.657);
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 400px;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 450px;
 
   h2 {
     margin-top: 0;
+    font-size: 20px;
   }
   .close_button {
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
+    top: 15px;
+    right: 15px;
+    padding: 8px 12px;
     background-color: transparent;
     border: none;
-    font-size: 24px;
+    font-size: 26px;
     color: rgb(97, 96, 96);
     cursor: pointer;
   }
@@ -34,45 +35,39 @@
   .table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 25px 0;
   }
   th {
-    background-color: #181212;
-    padding: 2%;
+    padding: 15px;
+    font-size: 16px;
   }
 
-  tbody tr:hover {
-    background-color: #f0ff6b61;
-  }
 
   tbody tr:nth-child(even) {
-    background-color: #7a41414f;
-    padding: 2%;
+    background-color: #ffffff2f;
   }
   .btn {
     background-color: #d1c5a061;
     border: none;
     color: white;
-    padding: 10px 15px;
+    padding: 12px 18px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 13px;
+    font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 6px;
+    margin-right: 8px;
   }
 
-  .btn:hover {
-    background-color: #8e7e3e;
-  }
+
   form {
     display: flex;
     flex-direction: column;
 
     input[type="number"] {
-      margin-bottom: 10px;
-      padding: 5px;
+      margin-bottom: 15px;
+      padding: 10px;
       font-size: 16px;
       border-radius: 5px;
       border: none;
@@ -85,24 +80,21 @@
       justify-content: space-between;
 
       button {
-        padding: 10px;
+        padding: 12px 15px;
         font-size: 16px;
         border-radius: 5px;
         border: none;
         cursor: pointer;
         outline: none;
 
-        &:hover {
-          opacity: 0.8;
-        }
 
         &:first-child {
-          background-color: rgba(104, 126, 104, 0.754);
+          background-color: rgba(154, 158, 154, 0.842);
           color: white;
         }
 
         &:last-child {
-          background-color: rgba(176, 147, 147, 0.749);
+          background-color: rgba(128, 123, 123, 0.87);
           color: white;
         }
       }

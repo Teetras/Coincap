@@ -3,11 +3,9 @@
 }
 .head {
   display: flex;
-  // background-color: #2623239c;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  // padding: 10px;
   color: rgba(255, 255, 255, 0.935);
   font-weight: 500;
   font-size: large;
@@ -17,12 +15,10 @@
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 0, 0.459);
   border-color: rgb(255, 255, 255);
-  // border-style: dotted;
 }
 .topCrypto {
   display: flex;
   flex-direction: row;
-  // background-color: #f2f2f261;
   width: 40%;
 }
 .topCrypto p {
@@ -30,9 +26,9 @@
 }
 .btnOpenBag {
   background-color: #3a3d0541;
-  -webkit-box-shadow: 0px 0px 10px 2px rgba(255, 214, 0, 0.77);
-  -moz-box-shadow: 0px 0px 10px 2px rgba(255, 214, 0, 0.77);
-  box-shadow: 0px 0px 10px 2px rgba(255, 214, 0, 0.77);
+  -webkit-box-shadow: 0px 0px 4px 2px rgba(255, 214, 0, 0.77);
+  -moz-box-shadow: 0px 0px 4px 2px rgba(255, 214, 0, 0.77);
+  box-shadow: 0px 0px 4px 2px rgba(255, 214, 0, 0.77);
   border: none;
   color: white;
   padding: 10px 20px;
@@ -52,7 +48,6 @@
   .topCrypto {
     display: block;
     flex-direction: column;
-    // background-color: #f2f2f261;
     width: 30%;
    
   }

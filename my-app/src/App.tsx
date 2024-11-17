@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import CryptoTable from "./Table/CryptoTable";
 import Header from "./Header/Header";
 import "./App.module.scss";
